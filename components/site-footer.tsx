@@ -22,9 +22,6 @@ export default function SiteFooter() {
           <Link href={""}>
             <Icons.instagram />
           </Link>
-          <Link href={""}>
-            <Icons.x />
-          </Link>
         </div>
       </div>
       <div className="pb-2">

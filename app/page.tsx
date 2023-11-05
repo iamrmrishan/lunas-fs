@@ -1,15 +1,9 @@
-import { cookies } from "next/headers"
 import Link from "next/link"
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export default async function IndexPage() {
-  const supabase = createServerComponentClient({ cookies })
-  const { data: reviews } = await supabase.from("reviews").select()
-  const stars = 9
   return (
     <>
       <section className="space-y-6 pb-3 pt-6 md:pb-3 md:pt-10 lg:py-15">
@@ -44,19 +38,25 @@ export default async function IndexPage() {
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
             <div className="flex flex-col rounded-lg px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-muted-foreground">Total reviews</dt>
+              <dt className="order-last text-lg font-medium text-muted-foreground">
+                Total reviews
+              </dt>
               <dd className="text-4xl font-extrabold md:text-5xl">48</dd>
             </div>
           </div>
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex flex-col rounded-lg px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-muted-foreground">Total Quesions</dt>
+            <div className="flex flex-col rounded-lg px-4 py-8 text-center">
+              <dt className="order-last text-lg font-medium text-muted-foreground">
+                Total Quesions
+              </dt>
               <dd className="text-4xl font-extrabold md:text-5xl">21</dd>
             </div>
           </div>
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex flex-col rounded-lg px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-muted-foreground">Total users</dt>
+            <div className="flex flex-col rounded-lg px-4 py-8 text-center">
+              <dt className="order-last text-lg font-medium text-muted-foreground">
+                Total users
+              </dt>
               <dd className="text-4xl font-extrabold md:text-5xl">61</dd>
             </div>
           </div>
@@ -147,9 +147,5 @@ export default async function IndexPage() {
         </div>
       </section>
     </>
-
-    // <pre>
-    //   {JSON.stringify(reviews, null, 1)}
-    // </pre>
   )
 }
